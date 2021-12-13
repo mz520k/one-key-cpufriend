@@ -16,7 +16,7 @@ GREEN="\033[1;32m"
 OFF="\033[m"
 
 # Cloudflare 链接
-CFURL="https://hackintosh.stevezheng.workers.dev"
+# CFURL="https://hackintosh.stevezheng.workers.dev"
 
 # 对应的plist
 X86_PLIST="/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Resources/${BOARD_ID}.plist"
