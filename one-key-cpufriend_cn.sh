@@ -129,7 +129,6 @@ function downloadKext() {
 
 # 拷贝目标plist
 function copyPlist() {
-
   cp "${X86_PLIST}" . || exit 1
 }
 
