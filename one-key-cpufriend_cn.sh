@@ -16,7 +16,7 @@ GREEN="\033[1;32m"
 OFF="\033[m"
 
 # Cloudflare 链接
-CFURL="https://hackintosh.stevezheng.workers.dev"
+# CFURL="https://hackintosh.stevezheng.workers.dev"
 
 # 对应的plist
 X86_PLIST="/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Resources/${BOARD_ID}.plist"
@@ -83,6 +83,21 @@ function printHeader() {
   echo '====================================================================='
 }
 
+# 检查board-id
+function checkBoardID() {
+  if echo "${EPP_SUPPORTED_MODELS[@]}" | grep -w "${BOARD_ID}" &> /dev/null; then
+    support=2
+  elif echo "${EPP_SUPPORTED_MODELS_SPECIAL[@]}" | grep -w "${BOARD_ID}" &> /dev/null; then
+    support=3
+  elif echo "${LFM_800_MODELS[@]}" | grep -w "${BOARD_ID}" &> /dev/null; then
+    support=4
+  elif echo "${LFM_SUPPORTED_MODELS[@]}" | grep -w "${BOARD_ID}" &> /dev/null; then
+    support=1
+  else
+    echo -e "[ ${RED}ERROR${OFF} ]: 抱歉，你的board-id暂不被支持!"
+    exit 1
+  fi
+}
 
 # 如果网络异常，退出
 function networkWarn() {
@@ -126,6 +141,7 @@ function downloadKext() {
   unzip -qq "*.zip" || exit 1
   echo -e "[ ${GREEN}OK${OFF} ]下载完成"
 }
+
 
 
 # 修改LFM值来调整最低频率
