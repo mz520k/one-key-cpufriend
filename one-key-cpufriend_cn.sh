@@ -127,10 +127,6 @@ function downloadKext() {
   echo -e "[ ${GREEN}OK${OFF} ]下载完成"
 }
 
-# 拷贝目标plist
-function copyPlist() {
-  cp "${X86_PLIST}" . || exit 1
-}
 
 # 修改LFM值来调整最低频率
 # 重新考虑这个方法是否必要, 因为LFM看起来不会影响性能表现
