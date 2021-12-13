@@ -398,14 +398,6 @@ function generateKext(){
   echo -e "[ ${GREEN}OK${OFF} ]生成完成"
 }
 
-# 清理临时文件夹文件夹并结束
-function clean(){
-  echo
-  echo "正在清理临时文件"
-  sudo rm -rf "${WORK_DIR}"
-  echo -e "[ ${GREEN}OK${OFF} ]清理完成"
-  echo
-}
 
 # 主程序
 function main(){
