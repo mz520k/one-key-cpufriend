@@ -83,21 +83,7 @@ function printHeader() {
   echo '====================================================================='
 }
 
-# 检查board-id
-function checkBoardID() {
-  if echo "${EPP_SUPPORTED_MODELS[@]}" | grep -w "${BOARD_ID}" &> /dev/null; then
-    support=2
-  elif echo "${EPP_SUPPORTED_MODELS_SPECIAL[@]}" | grep -w "${BOARD_ID}" &> /dev/null; then
-    support=3
-  elif echo "${LFM_800_MODELS[@]}" | grep -w "${BOARD_ID}" &> /dev/null; then
-    support=4
-  elif echo "${LFM_SUPPORTED_MODELS[@]}" | grep -w "${BOARD_ID}" &> /dev/null; then
-    support=1
-  else
-    echo -e "[ ${RED}ERROR${OFF} ]: 抱歉，你的board-id暂不被支持!"
-    exit 1
-  fi
-}
+
 
 # 如果网络异常，退出
 function networkWarn() {
