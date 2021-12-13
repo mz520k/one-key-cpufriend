@@ -19,7 +19,7 @@ OFF="\033[m"
 CFURL="https://hackintosh.stevezheng.workers.dev"
 
 # 对应的plist
-X86_PLIST="/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Resources/${BOARD_ID}.plist"
+X86_PLIST="/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Resources/Mac-27AD2F918AE68F61.plist"
 
 # 支持的型号
 EPP_SUPPORTED_MODELS=(
