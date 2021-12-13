@@ -129,11 +129,6 @@ function downloadKext() {
 
 # 拷贝目标plist
 function copyPlist() {
-  if [[ ! -f "${X86_PLIST}" ]]; then
-    echo -e "[ ${RED}ERROR${OFF} ]: 未找到${X86_PLIST}!"
-    clean
-    exit 1
-  fi
 
   cp "${X86_PLIST}" . || exit 1
 }
