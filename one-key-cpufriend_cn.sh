@@ -61,7 +61,6 @@ LFM_SUPPORTED_MODELS=(
 LFM_800_MODELS=(
   'Mac-0CFF9C7C2B63DF8D' # MacBookAir9,1
   'Mac-5F9802EFE386AA28' # MacBookPro16,2
-  'Mac-27AD2F918AE68F61' # MacPro7,1
 )
 
 function init() {
@@ -132,12 +131,6 @@ function downloadKext() {
 
 # 拷贝目标plist
 function copyPlist() {
-  if [[ ! -f "${X86_PLIST}" ]]; then
-    echo -e "[ ${RED}ERROR${OFF} ]: 未找到${X86_PLIST}!"
-    clean
-    exit 1
-  fi
-
   cp "${X86_PLIST}" . || exit 1
 }
 
